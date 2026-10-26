@@ -1,0 +1,14 @@
+window.onload = function() {
+    const urlParams = new URLSearchParams(window.location.search);
+    
+    // Si la página se abre desde el WebView de la aplicación Android
+    if (urlParams.get('origen') === 'app') {
+        
+        // 1. Ocultar la pantalla de Login y mostrar el Panel Principal directamente
+        document.getElementById('contenedor-login').style.display = 'none';
+        document.getElementById('panel-principal').style.display = 'block';
+        
+        // 2. Ocultar el botón o pestaña de "Registrar Envío"
+        document.getElementById('boton-pestana-envio').style.display = 'none';
+    }
+};
